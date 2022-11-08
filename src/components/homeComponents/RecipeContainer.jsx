@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RecipeCard from "../../elements/RecipeCard";
+import RecipeCard from "../../Elements/RecipeCard";
 import styles from "./Home.module.css";
 import { BiSearchAlt2 } from "react-icons/bi";
 
