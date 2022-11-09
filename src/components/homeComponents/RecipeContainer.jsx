@@ -29,7 +29,7 @@ const RecipeContainer = ({recipes}) => {
         />
       </span>
       <div className={styles.recipe_container}>
-        {recipeDisplay ? recipeDisplay : <h2>No Recipes :(</h2>}
+        {recipeDisplay ? recipeDisplay : <h2>No Recipes :</h2>}
       </div>
     </section>
   );
