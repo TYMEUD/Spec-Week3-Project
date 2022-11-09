@@ -2,8 +2,19 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import styles from "./RecipeCard.module.css";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const RecipeCard = ({recipe}) => {
+  const DetailScreen = () => {
+    const { id } = useParams()};
+    useEffect(() => {
+      axios
+          .get("https://recipes.devmountain.com/recipes/${id}")
+          .then((res) => {
+              setRecipe(res.data);
+          });
+  }, []);
+
   const navigate = useNavigate()
 
   const handleClick = () => {

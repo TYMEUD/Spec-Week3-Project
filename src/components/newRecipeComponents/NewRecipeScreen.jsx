@@ -7,6 +7,8 @@ const NewRecipeScreen = () => {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
 
+  axios.post(`https://recipes.devmountain.com/recipes`, values)
+
   const addIngredient = () => {
     setIngredients([...ingredients, { name, quantity }]);
     setName("");
@@ -31,9 +33,9 @@ const onSubmit = (values) => {
   return (
     <section>
       <h1>Tell us about your Recipe!</h1>
-      <Formik initialValues={initialValues} onSubmit={onSubmit}/>
-    {({ values, handleChange, handleSubmit }) => (
-        <form onSubmit={handleSubmit}>
+      <Formik initialValues={initialValues} onSubmit={onSubmit}>
+    {({ values, handleChange, handleSubmit }) => {
+      <form onSubmit={handleSubmit}>
         <input 
           placeholder="Title your Recipe!"
           value={values.recipeName}
@@ -69,13 +71,19 @@ const onSubmit = (values) => {
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
           name="quantity"/>
+        <button
+          type="button"
+          className="orange-btn"
+          onClick={addIngredient}/>
         <textarea name="" id="" cols="30" rows="10"></textarea>
         <button>Cook</button>
         <button>Bake</button>
         <button>Drink</button>
       </form>
-     </section>
-  );
+      }}
+    </Formik>
+    </section>
+  )
 };
 
 export default NewRecipeScreen;
