@@ -48,12 +48,12 @@ time, mark, audio, video {
   .blue-btn {
 	--color: hsl(var(--secondary-color));
 	background-color: var(--color);
-	color: green;
+	color: white;
   }
   .orange-btn {
 	--color: hsl(var(--primary-color), var(--l));
 	background-color: var(--color);
-	color: green;
+	color: white;
   }
   
   .App {

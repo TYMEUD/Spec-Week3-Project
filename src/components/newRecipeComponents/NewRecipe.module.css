@@ -66,9 +66,10 @@ textarea {
 .input_container input {
   width: 100%;
 }
-/* .input_container div {
+ 
+.input_container div {
   width: 100%;
-} */
+} 
 
 .ingredient_inputs {
   display: flex;

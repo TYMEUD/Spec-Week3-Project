@@ -1,5 +1,5 @@
 import React from "react";
-import {useState, useEffect} from 'react';
+import styles from "./NewRecipe.module.css";
 import {Formik} from "formik"
 import axios from "axios";
 
@@ -32,16 +32,7 @@ const NewRecipeScreen = () => {
     console.log(values);
   };
 
-    axios
-      .post(`https://recipes.devmountain.com/recipes`, values)
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-
+  
   const ingredientDisplay = ingredients.map((ing) => {
     return (
       <li>
@@ -49,6 +40,15 @@ const NewRecipeScreen = () => {
       </li>
     );
   });
+  
+  axios
+    .post(`https://recipes.devmountain.com/recipes`, values)
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   return (
     <section>
